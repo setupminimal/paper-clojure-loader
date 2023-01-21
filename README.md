@@ -1,6 +1,10 @@
-# Tree Plugin
+# Paper Clojure Loader
 
-[![Build, Test, and Release](https://github.com/setupminimal/tree-plugin/actions/workflows/main.yml/badge.svg)](https://github.com/setupminimal/tree-plugin/actions/workflows/main.yml)
+[![Build, Test, and Release](https://github.com/setupminimal/paper-clojure-loader/actions/workflows/main.yml/badge.svg)](https://github.com/setupminimal/paper-clojure-loader/actions/workflows/main.yml)
+
+This Paper plugin (probably also compatible with Spigot and other Bukkit-derived minecraft servers) is a shim that lets you load custom clojure scripts which can then pretend to be JavaPlugins.
+
+Put a `main.clj` file in your server folder that provides a `register` function. This function will be called when the plugin is enabled, and can from there register its own listeners. See the provided `example-main.clj`.
 
 ## Creating a Release
 Below are the steps you should follow to create a release.

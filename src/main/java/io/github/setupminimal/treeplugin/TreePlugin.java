@@ -1,5 +1,6 @@
 package io.github.setupminimal.treeplugin;
 
+import clojure.java.api.Clojure;
 import clojure.lang.IFn;
 import io.papermc.lib.PaperLib;
 import org.bukkit.plugin.java.JavaPlugin;
