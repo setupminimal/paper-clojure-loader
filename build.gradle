@@ -2,7 +2,6 @@ import com.github.spotbugs.snom.SpotBugsTask
 import java.text.SimpleDateFormat
 
 plugins {
-    id 'checkstyle'
     id "com.github.spotbugs" version "5.0.13"
     id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
@@ -56,6 +55,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.clojure:clojure:1.11.1'
     compileOnly 'io.papermc.paper:paper-api:1.19.3-R0.1-SNAPSHOT'
     compileOnly 'com.github.spotbugs:spotbugs-annotations:4.7.3'
     implementation 'io.papermc:paperlib:1.0.8'
@@ -76,18 +76,6 @@ processResources {
     }
 }
 
-checkstyle {
-    toolVersion '10.6.0'
-    maxWarnings = 0
-}
-
-tasks.withType(Checkstyle) {
-    reports {
-        xml.required = false
-        html.required = true
-    }
-}
-
 tasks.withType(SpotBugsTask) {
     reports {
         xml {
@@ -102,7 +90,6 @@ tasks.withType(SpotBugsTask) {
 shadowJar {
     archiveClassifier.set('')
     relocate 'io.papermc.lib', 'shadow.io.papermc.paperlib'
-    minimize()
 }
 
 // Disable jar and replace with shadowJar
