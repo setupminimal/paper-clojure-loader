@@ -83,8 +83,8 @@ jobs:
         if: github.ref_type == 'tag'
         with:
           files: ${{ github.workspace }}/build/libs/*
-          generate_release_notes: true
+          generate_release_notes: false
           name: ${{ format('Release {0}', github.ref_name) }}
           prerelease: ${{ contains(github.ref_name, '-rc-') }}
-          fail_on_unmatched_files: true
+          fail_on_unmatched_files: false
           draft: true
